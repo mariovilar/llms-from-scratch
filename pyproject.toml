@@ -1,18 +1,24 @@
 [project]
 name = "llms-from-scratch"
 version = "0.1.0"
-description = "Add your description here"
+description = "Educational, from-scratch implementations of transformer language models"
 readme = "README.md"
+license = { text = "MIT" }
 authors = [
     { name = "Mario Vilar", email = "mario@vilar.dev" }
 ]
 requires-python = ">=3.14"
 dependencies = [
-    "ipykernel>=7.3.0",
     "numpy>=2.5.2",
     "pandas>=3.0.5",
+    "tiktoken>=0.14.0",
     "torch>=2.13.0",
 ]
+
+[project.urls]
+Homepage = "https://github.com/mariovilar/llms-from-scratch"
+Repository = "https://github.com/mariovilar/llms-from-scratch"
+Issues = "https://github.com/mariovilar/llms-from-scratch/issues"
 
 [project.scripts]
 llms-from-scratch = "llms_from_scratch:main"
@@ -23,5 +29,19 @@ build-backend = "uv_build"
 
 [dependency-groups]
 dev = [
+    "ipykernel>=7.3.0",
     "jupyterlab>=4.6.3",
+    "pytest>=8.3.0",
+    "ruff>=0.11.0",
 ]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py314"
+exclude = ["notebooks"]
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP"]

@@ -1,11 +1,53 @@
 # Python-generated files
 __pycache__/
-*.py[oc]
+*.py[ocd]
 build/
 dist/
 wheels/
 *.egg-info
-source-code/
+.pytest_cache/
+.Python
+.ruff_cache/
+.coverage
+htmlcov/
+.DS_Store
+
+# Local copy of the book and its reference code (not part of this project)
+/reference/
 
 # Virtual environments
 .venv
+env/
+venv/
+
+# Editors and IDEs
+.vscode/
+.idea/
+*.swp
+.ipynb_checkpoints/
+
+# Model weights and checkpoints (keep large binaries out of GitHub)
+*.pt
+*.pth
+*.safetensors
+*.ckpt
+*.bin
+*.onnx
+checkpoints/
+models/
+
+# Datasets (only small, public-domain text corpora are tracked)
+data/*
+!data/the-lady-with-the-dog.txt
+*.csv
+*.jsonl
+
+# Local secrets
+.env
+.env.*
+!.env.example
+
+# Logs and experiment outputs
+*.log
+runs/
+wandb/
