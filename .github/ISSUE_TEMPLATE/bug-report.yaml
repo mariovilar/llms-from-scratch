@@ -1,0 +1,46 @@
+name: Bug report
+description: Report a reproducible problem in this project
+title: ""
+labels: [bug]
+assignees: []
+body:
+  - type: textarea
+    id: bug_description
+    attributes:
+      label: What happened?
+      description: Describe the problem and include a minimal reproducible example when possible.
+    validations:
+      required: true
+
+  - type: input
+    id: location
+    attributes:
+      label: Chapter, notebook or module
+      placeholder: "For example: notebooks/ch03.ipynb"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: operating_system
+    attributes:
+      label: Operating system
+      options:
+        - macOS
+        - Linux
+        - Windows
+        - Other
+    validations:
+      required: true
+
+  - type: textarea
+    id: environment
+    attributes:
+      label: Environment
+      description: Include Python, uv, PyTorch and relevant package versions.
+      placeholder: |
+        Python:
+        uv:
+        PyTorch:
+        Device:
+    validations:
+      required: false
